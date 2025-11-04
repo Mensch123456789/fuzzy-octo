@@ -4,8 +4,8 @@ import time
 #Versuche = 0
 
 def start():
-    Zahl = random.randint(1, 100)
-    print("Errate eine Zahl von 1 - 100!")
+    Zahl = random.randint(-1, 101)
+    print("Errate eine Zahl von -1 - 101!")
 
     raten(Zahl, 1)
     
@@ -20,8 +20,19 @@ def raten(Zahl, Versuche):
 
     if Rateversuch == Zahl:
         print(f"Richtig! Du hast {Versuche} Versuche gebraucht.")
-        time.sleep(2)
-        exit()
+
+        
+        erneut = input("Möchtest du erneut spielen? (ja/nein)")
+        if erneut == "nein":
+            print("ok")
+            time.sleep(2)
+            exit()
+        elif erneut == "ja":
+            print("Das Spiel startet nun neu")
+            start()
+        else:
+            print("Bitte nur ja oder nein")
+            Nochmal_Spielen()
 
     
     else:
@@ -31,5 +42,20 @@ def raten(Zahl, Versuche):
             print("KLeiner")
         
         raten(Zahl, Versuche+1)
+
+    
+def Nochmal_Spielen():
+    erneut = input("Möchtest du erneut spielen? (ja/nein)")
+    if erneut == "nein":
+        print("ok")
+        time.sleep(2)
+        exit()
+    elif erneut == "ja":
+        print("Das Spiel startet nun neu")
+        start()
+    else:
+        print("Bitte nur ja oder nein")
+        Nochmal_Spielen()
+
 
 start()
