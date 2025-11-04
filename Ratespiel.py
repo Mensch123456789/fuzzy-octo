@@ -11,9 +11,9 @@ def start():
     
 def raten(Zahl, Versuche, min, max):
     
-    Rateversuch_string = input("Was ist deine Vermutung? Tipp: Mit ? wird der geforderte Bereich angezeigt")
+    Rateversuch_string = input("Was ist deine Vermutung? Tipp: Mit ? wird der geforderte Bereich angezeigt.")
 
-    if Rateversuch_string == "?"
+    if Rateversuch_string == "?":
         print(f"Die gesuchte Zahl ist zwischen {min} und {max} (exklusive {min} und {max}).")
         raten(Zahl, Versuche, min, max)
     
