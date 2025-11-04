@@ -48,4 +48,18 @@ def gefordeter_Bereich(min, max, Zahl, Rateversuch):
         print(f"Die Zahl ist nicht im geforderten Bereich versuche es doch mit einer Zahl im Bereich von {min} - {max} (exklusive {min} und {max}).")
         in_gefordertem_Bereich = False
     return min, max, in_gefordertem_Bereich
+
+def Nochmal_Spielen():
+    erneut = input("Möchtest du erneut spielen? (ja/nein)")
+    if erneut == "nein":
+        print("ok")
+        time.sleep(2)
+        exit()
+    elif erneut == "ja":
+        print("Das Spiel startet nun neu")
+        start()
+    else:
+        print("Bitte nur ja oder nein")
+        Nochmal_Spielen()
+
 start()
