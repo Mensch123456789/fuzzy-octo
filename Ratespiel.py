@@ -4,10 +4,21 @@ import time
 #Versuche = 0
 
 def start():
-    Zahl = random.randint(-1, 101)
-    print("Errate eine Zahl von -1 - 101!")
+    try:
+        Spanne_min = int(input("Errate eine Zahl von ..."))
+    except ValueError:
+        print("Nur Zahleneingaben sind erlaubt!")
+        start()
+    try:
+        Spanne_max = int(input("bis ..."))
+    except ValueError:
+        print("Nur Zahleneingaben sind erlaubt!")
+        start()
+    
+    Zahl = random.randint(Spanne_min, Spanne_max)
+    print(f"OK! Errate eine Zahl von {Spanne_min} bis {Spanne_max}!")
 
-    raten(Zahl, 1, -1, 101)
+    raten(Zahl, 1, Spanne_min, Spanne_max)
     
 def raten(Zahl, Versuche, min, max):
     
