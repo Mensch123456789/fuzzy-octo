@@ -4,10 +4,10 @@ import time
 #Versuche = 0
 
 def start():
-    Zahl = random.randint(1, 100)
-    print("Errate eine Zahl von 1 - 100!")
+    Zahl = random.randint(-1, 101)
+    print("Errate eine Zahl von -1 - 101!")
 
-    raten(Zahl, 1, 1, 100)
+    raten(Zahl, 1, -1, 101)
     
 def raten(Zahl, Versuche, min, max):
     
@@ -28,8 +28,7 @@ def raten(Zahl, Versuche, min, max):
     if in_gefordertem_Bereich:
         if Rateversuch == Zahl:
             print(f"Richtig! Du hast {Versuche} Versuche gebraucht.")
-            time.sleep(2)
-            exit()  
+            Nochmal_Spielen()
         else:
             if Rateversuch <= Zahl:
                 print("Größer")
