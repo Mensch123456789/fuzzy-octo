@@ -21,7 +21,7 @@ def raten(Zahl, Versuche, min, max):
         Rateversuch = int(Rateversuch_string)
     except ValueError:
         print("Nur Zahleneingaben sind erlaubt!")
-        raten(Zahl, Versuche)
+        raten(Zahl, Versuche, min, max)
 
     min, max, in_gefordertem_Bereich =  gefordeter_Bereich(min, max, Zahl, Rateversuch)
 
