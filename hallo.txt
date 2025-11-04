@@ -1,1 +1,1 @@
-Hallo Welt von Git
+Git ist hilfreich
